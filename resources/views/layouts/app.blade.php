@@ -7,14 +7,13 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <title>{{ config('app.name', 'NEW-JMS') }}</title>
         <!-- Scripts (Fonts)-->
-        @vite(['resources/css/app.css'])
+        <!-- @vite(['resources/css/app.css']) -->
         <!-- plugins:css -->
         <link rel="stylesheet" href="{{asset('admin/vendors/mdi/css/materialdesignicons.min.css')}}">
         <link rel="stylesheet" href="{{asset('admin/vendors/ti-icons/css/themify-icons.css')}}">
         <link rel="stylesheet" href="{{asset('admin/vendors/css/vendor.bundle.base.css')}}">
         <link rel="stylesheet" href="{{asset('admin/vendors/font-awesome/css/font-awesome.min.css')}}">
         <!-- Plugin css for this page -->
-        <link rel="stylesheet" href="{{asset('admin/vendors/font-awesome/css/font-awesome.min.css')}}" />
         <link rel="stylesheet" href="{{asset('admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css')}}">
         <!-- Layout styles -->
         <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
