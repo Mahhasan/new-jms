@@ -29,7 +29,6 @@ class User extends Authenticatable
         'country',
         'role_id',
         'password',
-
     ];
 
     /**

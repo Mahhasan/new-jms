@@ -8,7 +8,8 @@
                 <div class="col-lg-4 mx-auto">
                     <div class="auth-form-light text-left p-5">
                         <div class="brand-logo">
-                            <img src="{{asset('admin/images/logo.svg')}}">
+                            <!-- <img src="{{asset('admin/images/logo.svg')}}"> -->
+                            <h2 class="text-primary"> DIUJMS</h2>
                         </div>
                         <h4>{{ __('Reset your Password') }}</h4>
 

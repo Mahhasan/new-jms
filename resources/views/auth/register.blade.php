@@ -1,19 +1,19 @@
-@extends('auth.layouts.app')
+@extends('layouts.guest')
 
 @section('content')
-<div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-        <div class="content-wrapper d-flex align-items-center auth">
-            <div class="row flex-grow">
-                <div class="col-md-6 col-lg-6 mx-auto">
-                    <div class="auth-form-light text-left p-5">
-                        <div class="brand-logo">
-                            <!-- <img src="{{asset('admin/images/logo.svg')}}"> -->
-                            <h2 class="text-primary">DIU JOURNAL</h2>
-                        </div>
-                        <h4>New here?</h4>
-                        <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
-                        <form class="pt-3" method="POST" action="{{ route('register') }}">
+    <div class="container-scroller">
+        <div class="container-fluid page-body-wrapper full-page-wrapper">
+            <div class="content-wrapper d-flex align-items-center auth">
+                <div class="row flex-grow">
+                    <div class="col-md-6 col-lg-6 mx-auto">
+                        <div class="auth-form-light text-left p-5">
+                            <div class="brand-logo">
+                                <!-- <img src="{{asset('admin/images/logo.svg')}}"> -->
+                                <h2 class="text-primary"> DIUJMS</h2>
+                            </div>
+                            <h4>New here?</h4>
+                            <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
+                            <form class="pt-3" method="POST" action="{{ route('register') }}">
                             @csrf
                             <div class="row">
                                 <label for="title" class="col-md-4 col-form-label text-md-end">{{ __('Title') }}</label>
@@ -53,6 +53,19 @@
                                 <div class="form-group col-md-8">
                                     <input id="last_name" type="text" class="form-control rounded-3 @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required>
                                     @error('last_name')
+                                        <div class="invalid-feedback">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
+                                </div>
+                            </div>
+
+                            <!-- Designation -->
+                            <div class="row">
+                                <label for="designation" class="col-md-4 col-form-label text-md-end">{{ __('Designation') }}</label>
+                                <div class="form-group col-md-8">
+                                    <input id="designation" type="text" class="form-control rounded-3 @error('designation') is-invalid @enderror" name="designation" value="{{ old('designation') }}">
+                                    @error('designation')
                                         <div class="invalid-feedback">
                                             {{ $message }}
                                         </div>
@@ -166,13 +179,13 @@
                                 <a href="{{route('login')}}" class="text-primary">Login</a>
                             </div>
                         </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<script defer>
+    <script defer>
     // Fetch countries and populate the dropdown
     document.addEventListener('DOMContentLoaded', function () {
         const countrySelect = document.getElementById('country');
@@ -191,5 +204,5 @@
             })
             .catch(error => console.error('Error fetching countries:', error));
     });
-</script>
+    </script>
 @endsection
