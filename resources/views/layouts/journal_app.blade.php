@@ -19,7 +19,10 @@
         <link rel="stylesheet" href="{{asset('admin/vendors/font-awesome/css/font-awesome.min.css')}}" />
         <link rel="stylesheet" href="{{asset('admin/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css')}}">
         <!-- Layout styles -->
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
         <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('admin/css/custom.css')}}">
         <!-- Favicon -->
         <!-- <link rel="shortcut icon" href="{{asset('admin/images/favicon.png')}}" /> -->
     </head>
@@ -30,7 +33,7 @@
             <div class="container-fluid page-body-wrapper">
                 <!-- Sidebar -->
                 @include('layouts.Sidebar')
-                <div class="main-panel">
+                <div class="main-panel bg-aliceblue">
                     <!-- Page Heading -->
                     @isset($header)
                         <header class="bg-white shadow">

@@ -24,13 +24,13 @@
 
           @if(session()->get('success'))
             <div class="alert alert-success">
-            {{ session()->get('success') }}  
+            {{ session()->get('success') }}
             </div><br />
           @endif
 
           <div class="row">
             <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
-            <input name="status" type="hidden" value="Under Fisrt Screening"> 
+            <input name="status" type="hidden" value="Under Fisrt Screening">
             <div class="col-md-6">
               <div class="form-group mb-3">
                 <label for="title">Select Journal:</label>
@@ -71,7 +71,7 @@
               </div>
             </div>
           </div>
-      
+
           <div class="row">
             <div class="col-md-12">
               <div class="card card-primary">
@@ -106,7 +106,7 @@
                                 <option value="Ms.">Ms.</option>
                                 <option value="Prof.">Prof.</option>
                               </select>
-                            </div> 
+                            </div>
                           </td>
                           <td>
                             <div class="form-group">
@@ -133,15 +133,15 @@
                                 <input type="button" name="add" id="add" class="btn btn-block btn-info btn-sm" value="More">
                               </div>
                             </td>
-                        </tr>   
+                        </tr>
                       </tbody>
                   </table>
-                  
+
                 </div>
               </div>
             </div>
           </div>
-          <div class="form-group mt-3">  
+          <div class="form-group mt-3">
             <input type="submit" class="btn btn-block btn-success" name="submit" class="form-control" value="Submit">
           </div>
         </form>
@@ -164,7 +164,7 @@
                     type: "GET",
                     dataType: "json",
                     success:function(data) {
-                        
+
                         $('select[name="topic_id"]').empty();
                         $.each(data, function(key, value) {
                             $('select[name="topic_id"]').append('<option value="'+ key +'">'+ value +'</option>');
@@ -180,14 +180,14 @@
 
 <!-- For dynamic table -->
 <script type="text/javascript">
-  var i = 0;   
+  var i = 0;
   $("#add").on("click",function(){
     i++;
     $("#dynamicTable").append('<tr><td><div class="form-group"><input type="text" name="addmore['+i+'][email]" class="form-control" placeholder="Enter Email"></div></td><td><div class="form-group"><select name="addmore['+i+'][title]" class="form-control"><option>Dr.</option><option>Mr.</option><option>Ms.</option><option>Mrs.</option><option>Prof.</option></select></div> </td><td><div class="form-group"><input type="text" name="addmore['+i+'][name]" class="form-control" placeholder="First Name"></div></td><td><div class="form-group"><input type="text" name="addmore['+i+'][family_name]" class="form-control" placeholder="Family Name"></div></td><td><div class="form-group"><input type="text" name="addmore['+i+'][organization]" class="form-control" placeholder="Enter Organization"></div></td><td><div class="form-group"><input type="text" name="addmore['+i+'][country]" class="form-control" placeholder="Enter Country"></div></td><td><div class="form-group"><input type="button" class="btn btn-block btn-info btn-sm btn btn-danger remove-tr" value="Remove"></div></td></tr>');
-    
+
   });
 
-  $(document).on('click', '.remove-tr', function(){  
+  $(document).on('click', '.remove-tr', function(){
       $(this).parents('tr').remove();
   });
 </script>

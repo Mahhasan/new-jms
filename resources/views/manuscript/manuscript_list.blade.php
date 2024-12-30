@@ -1,8 +1,8 @@
 @extends('layouts.journal_app')
 @section('content')
 
-<section class="content">
-    <div class="container-fluid">
+<section class="content-wrapper">
+    <div class="">
         <div class="row">
             <div class="col-12">
 
@@ -12,7 +12,7 @@
                         <h5 class="card-title">Manuscript Lists</h5>
                     </div>
                     <div class="card-body">
-                        <table id="" class="table datatable table-striped table-bordered table-responsive" style="width:100%">
+                        <table id="" class="table table-bordered table-hover datatable" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Paper ID</th>
@@ -47,7 +47,7 @@
                         <h5 class="card-title">Manuscript Lists</h5>
                     </div>
                     <div class="card-body">
-                        <table id="datatablesSimple" class="table table-striped table-bordered" style="width:100%">
+                        <table class="table table-bordered table-hover datatable" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Paper ID</th>
@@ -92,7 +92,7 @@
                         <h5 class="card-title">Manuscript Lists</h5>
                     </div>
                     <div class="card-body">
-                        <table id="datatablesSimple" class="table table-striped table-bordered" style="width:100%">
+                        <table class="table table-bordered table-hover datatable" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Paper ID</th>
@@ -129,7 +129,7 @@
                         <h5 class="card-title">Manuscript Lists</h5>
                     </div>
                     <div class="card-body">
-                        <table id="datatable" class="table datatable table-striped table-bordered" style="width:100%">
+                        <table class="table table-bordered table-hover datatable" style="width:100%">
                             <thead>
                                 <tr>
                                     <th>Paper ID</th>

@@ -1,8 +1,8 @@
 @extends('layouts.journal_app')
 @section('content')
 
-<section class="content">
-  <div class="container-fluid">
+<section class="content-wrapper">
+  <div class="">
     <div class="row">
       <div class="col-12">
         <div class="card">
@@ -16,7 +16,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-lg-12">
-                  <table class="table table-striped table-bordered" style="width:100%">
+                  <table class="table table-bordered" style="width:100%">
                   <tr>
                     <th class="col-sm-2">Paper ID</th>
                     <td>{{$manuscripts->id}}</td>
@@ -130,7 +130,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-lg-12">
-                <table class="table table-striped table-bordered" style="width:100%">
+                <table class="table table-bordered" style="width:100%">
                   <tr>
                     <th class="col-sm-2">Paper ID</th>
                     <td>{{$manuscripts->id}}</td>
@@ -229,7 +229,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-lg-12">
-                <table class="table table-striped table-bordered" style="width:100%">
+                <table class="table table-bordered" style="width:100%">
                   <tr>
                     <th class="col-sm-2">Paper ID</th>
                     <td>{{$manuscripts->id}}</td>
@@ -308,7 +308,7 @@
           <div class="card-body">
             <div class="row">
               <div class="col-lg-12">
-                <table class="table table-striped table-bordered" style="width:100%">
+                <table class="table table-bordered" style="width:100%">
                   <tr>
                     <th class="col-sm-2">Paper ID</th>
                     <td>{{$manuscripts->id}}</td>

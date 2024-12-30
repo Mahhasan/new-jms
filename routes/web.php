@@ -23,8 +23,12 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 // Manuscript Submission
-Route::get('/manuscript_submission', [ManuscriptController::class, 'index']);
-Route::get('/manuscript_submission', [HomeController::class, 'create_manuscript']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/manuscript_submission', [ManuscriptController::class, 'index'])->name('manuscript.index');
+    Route::post('/manuscript_submission', [ManuscriptController::class, 'create_manuscript'])->name('manuscript.store');
+});
+// Route::get('/manuscript_submission', [ManuscriptController::class, 'index']);
+// Route::get('/manuscript_submission', [ManuscriptController::class, 'create_manuscript']);
 
 // Dependent form topic
 Route::get('myform/ajax/{id}', [ManuscriptController::class, 'getTopic'])->name('myform.ajax');
