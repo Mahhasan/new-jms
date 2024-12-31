@@ -86,8 +86,8 @@ Route::get('/user-profile', [UserController::class, 'user_profile']);
 Route::put('/user-profile', [UserController::class, 'update_user_profile']);
 
 // Change Password
-Route::get('/change-password', [ChangePasswordController::class, 'password']);
-Route::post('/change-password', [ChangePasswordController::class, 'change_password']);
+// Route::get('/change-password', [ChangePasswordController::class, 'password']);
+// Route::post('/change-password', [ChangePasswordController::class, 'change_password']);
 
 // Store Reviewer
 Route::post('/create-reviewer', [UserController::class, 'store_reviewer']);

@@ -9,10 +9,10 @@
                 <div class="card-header">Change Password</div>
                 <div class="card-body">
                     <form method="POST" action="/change-password">
-                        @csrf 
+                        @csrf
                          @foreach ($errors->all() as $error)
                             <p class="text-danger">{{ $error }}</p>
-                         @endforeach 
+                         @endforeach
                         <div class="form-group row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-right">Current Password</label>
                             <div class="col-md-6">

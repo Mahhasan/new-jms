@@ -26,3 +26,10 @@ table.dataTable.no-footer {
 .dataTables_wrapper .dataTables_filter {
     margin-bottom: 15px;
 }
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img .availability-status {
+    bottom: 22px !important;
+    right: 0px !important;
+}
+.navbar .navbar-menu-wrapper .navbar-nav .nav-item.nav-profile .nav-link .nav-profile-img {
+    width: 10px;
+}

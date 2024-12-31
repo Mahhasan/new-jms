@@ -2,7 +2,7 @@
 @section('content')
 
 <!-- Main content -->
-<section class="content">
+<section class="content-wrapper">
   <div class="container-fluid">
     <div class="card card-default">
       <div class="card-header">
@@ -34,7 +34,7 @@
             <div class="col-md-6">
               <div class="form-group mb-3">
                 <label for="title">Select Journal:</label>
-                <select name="journal_id" class="form-control" required>
+                <select name="journal_id" class="text-dark form-select rounded-3" required>
                   <option value="">--- Select Journal ---</option>
                   @foreach($journals as $key=>$value)
                     <option value="{{$key}}">{{$value}}</option>
@@ -43,31 +43,31 @@
               </div>
               <div class="form-group mb-3">
                 <label for="title">Select Topic:</label>
-                <select name="topic_id" class="form-control" required>
+                <select name="topic_id" class="text-dark form-select rounded-3" required>
                   <option selected>--- Select Topic ---</option>
                 </select>
               </div>
               <div class="form-group mb-3">
                 <label for="exampleInputname">Paper Title</label>
-                <textarea name="paper_title" class="form-control" placeholder="Paper Title" required></textarea>
+                <textarea name="paper_title" class="form-control rounded-3" placeholder="Paper Title" required></textarea>
               </div>
               <div class="form-group mb-3">
                 <label for="exampleInputEmail1">Specific Area</label>
-                <input type="text" name="specific_area" class="form-control" placeholder="Specific Research Area">
+                <input type="text" name="specific_area" class="form-control rounded-3" placeholder="Specific Research Area">
               </div>
               <div class="form-group mb-3">
                 <label for="exampleInputname">keywords</label>
-                <input type="text" name="keywords" class="form-control" placeholder="Keywords" required>
-              </div>
-              <div class="form-group mb-4">
-                <label for="exampleInputname">Attach Full Paper</label>
-                <input type="file" value="{{old('mobile')}}" name="main_file" class="form-control" placeholder="Enter Mobile No" required>
+                <input type="text" name="keywords" class="form-control rounded-3" placeholder="Keywords" required>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-group mb-4">
                 <label for="exampleInputname">Abstract</label>
-                <textarea name="abstract" class="form-control" placeholder="Abstract" required></textarea>
+                <textarea name="abstract" class="form-control rounded-3" placeholder="Abstract" required></textarea>
+              </div>
+              <div class="form-group mb-4">
+                <label for="exampleInputname">Attach Full Paper</label>
+                <input type="file" value="{{old('mobile')}}" name="main_file" class="form-control rounded-3" placeholder="Enter Mobile No" required>
               </div>
             </div>
           </div>
@@ -92,13 +92,13 @@
                     <tbody>
                         <tr>
                           <td>
-                            <div class="form-group">
-                              <input type="text" name="addmore[0][email]" class="form-control" placeholder="Enter Email">
+                            <div class="">
+                              <input type="text" name="addmore[0][email]" class="form-control rounded-3" placeholder="Enter Email">
                             </div>
                           </td>
                           <td>
-                            <div class="form-group">
-                              <select class="form-control select2bs4" name="addmore[0][title]">
+                            <div class="">
+                              <select class="text-dark form-select rounded-3 select2bs4" name="addmore[0][title]">
                                 <option value="Dr.">Dr.</option>
                                 <option value="Mr.">Mr.</option>
                                 <option value="Miss.">Miss.</option>
@@ -109,27 +109,27 @@
                             </div>
                           </td>
                           <td>
-                            <div class="form-group">
-                              <input type="text" name="addmore[0][name]" class="form-control" placeholder="First Name">
+                            <div class="">
+                              <input type="text" name="addmore[0][name]" class="form-control rounded-3" placeholder="First Name">
                             </div>
                           </td>
                           <td>
-                            <div class="form-group">
-                              <input type="text" name="addmore[0][family_name]" class="form-control" placeholder="Family Name">
+                            <div class="">
+                              <input type="text" name="addmore[0][family_name]" class="form-control rounded-3" placeholder="Family Name">
                               </div>
                             </td>
                             <td>
-                              <div class="form-group">
-                                <input type="text" name="addmore[0][organization]" class="form-control" placeholder="Enter Organization">
+                              <div class="">
+                                <input type="text" name="addmore[0][organization]" class="form-control rounded-3" placeholder="Enter Organization">
                               </div>
                             </td>
                             <td>
-                              <div class="form-group">
-                              <input type="text" name="addmore[0][country]" class="form-control" placeholder="Enter Country">
+                              <div class="">
+                              <input type="text" name="addmore[0][country]" class="form-control rounded-3" placeholder="Enter Country">
                               </div>
                             </td>
                             <td>
-                              <div class="form-group">
+                              <div class="">
                                 <input type="button" name="add" id="add" class="btn btn-block btn-info btn-sm" value="More">
                               </div>
                             </td>
@@ -183,7 +183,7 @@
   var i = 0;
   $("#add").on("click",function(){
     i++;
-    $("#dynamicTable").append('<tr><td><div class="form-group"><input type="text" name="addmore['+i+'][email]" class="form-control" placeholder="Enter Email"></div></td><td><div class="form-group"><select name="addmore['+i+'][title]" class="form-control"><option>Dr.</option><option>Mr.</option><option>Ms.</option><option>Mrs.</option><option>Prof.</option></select></div> </td><td><div class="form-group"><input type="text" name="addmore['+i+'][name]" class="form-control" placeholder="First Name"></div></td><td><div class="form-group"><input type="text" name="addmore['+i+'][family_name]" class="form-control" placeholder="Family Name"></div></td><td><div class="form-group"><input type="text" name="addmore['+i+'][organization]" class="form-control" placeholder="Enter Organization"></div></td><td><div class="form-group"><input type="text" name="addmore['+i+'][country]" class="form-control" placeholder="Enter Country"></div></td><td><div class="form-group"><input type="button" class="btn btn-block btn-info btn-sm btn btn-danger remove-tr" value="Remove"></div></td></tr>');
+    $("#dynamicTable").append('<tr><td><div class=""><input type="text" name="addmore['+i+'][email]" class="form-control rounded-3" placeholder="Enter Email"></div></td><td><div class=""><select name="addmore['+i+'][title]" class="form-select rounded-3"><option>Dr.</option><option>Mr.</option><option>Ms.</option><option>Mrs.</option><option>Prof.</option></select></div> </td><td><div class=""><input type="text" name="addmore['+i+'][name]" class="form-control rounded-3" placeholder="First Name"></div></td><td><div class=""><input type="text" name="addmore['+i+'][family_name]" class="form-control rounded-3" placeholder="Family Name"></div></td><td><div class=""><input type="text" name="addmore['+i+'][organization]" class="form-control rounded-3" placeholder="Enter Organization"></div></td><td><div class=""><input type="text" name="addmore['+i+'][country]" class="form-control rounded-3" placeholder="Enter Country"></div></td><td><div class=""><input type="button" class="btn btn-block btn-info btn-sm btn btn-danger remove-tr" value="Remove"></div></td></tr>');
 
   });
 

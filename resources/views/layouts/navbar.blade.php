@@ -33,24 +33,24 @@
             </li>
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle" id="profileDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="nav-profile-img">
-                        <img src="{{asset('admin/images/faces/face1.jpg')}}" alt="image">
+                <div class="nav-profile-text">
+                    <p class="mb-1 text-black">
+                        @if(auth()->check())
+                            {{ auth()->user()->first_name }}
+                        @endif
+                    </p>
+                </div>
+                <div class="nav-profile-img">
+                        <!-- <img src="{{asset('admin/images/faces/face1.jpg')}}" alt="image"> -->
                         <span class="availability-status online"></span>
-                    </div>
-                    <div class="nav-profile-text">
-                        <p class="mb-1 text-black">
-                            @if(auth()->check())
-                                {{ auth()->user()->name }}
-                            @endif
-                        </p>
                     </div>
                 </a>
                 <div class="dropdown-menu navbar-dropdown" aria-labelledby="profileDropdown">
                     <a class="dropdown-item" href="{{url('/user-profile')}}">
                     <i class="mdi mdi-cached me-2 text-success"></i> User Profile </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="{{url('/change-password')}}">
-                    <i class="mdi mdi-cached me-2 text-success"></i> Change Password </a>
+                    <!-- <a class="dropdown-item" href="{{url('/change-password')}}">
+                    <i class="mdi mdi-cached me-2 text-success"></i> Change Password </a> -->
                     <div class="dropdown-divider"></div>
                     <!-- Logout Button -->
                     <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
