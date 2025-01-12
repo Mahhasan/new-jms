@@ -35,7 +35,7 @@
               <div class="form-group mb-3">
                 <label for="title">Select Journal:</label>
                 <select name="journal_id" class="text-dark form-select rounded-3" required>
-                  <option value="">--- Select Journal ---</option>
+                  <option value="">-----</option>
                   @foreach($journals as $key=>$value)
                     <option value="{{$key}}">{{$value}}</option>
                   @endforeach
@@ -44,7 +44,7 @@
               <div class="form-group mb-3">
                 <label for="title">Select Topic:</label>
                 <select name="topic_id" class="text-dark form-select rounded-3" required>
-                  <option selected>--- Select Topic ---</option>
+                  <option selected>-----</option>
                 </select>
               </div>
               <div class="form-group mb-3">
