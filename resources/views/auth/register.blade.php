@@ -185,16 +185,16 @@
             </div>
         </div>
     </div>
-    <script defer>
-    // Fetch countries and populate the dropdown
+    <!-- <script defer>
+
     document.addEventListener('DOMContentLoaded', function () {
         const countrySelect = document.getElementById('country');
 
-        // Fetch country data
+
         fetch('https://restcountries.com/v3.1/all')
             .then(response => response.json())
             .then(data => {
-                const countries = data.map(country => country.name.common).sort(); // Sort countries alphabetically
+                const countries = data.map(country => country.name.common).sort();
                 countries.forEach(country => {
                     const option = document.createElement('option');
                     option.value = country;
@@ -204,5 +204,39 @@
             })
             .catch(error => console.error('Error fetching countries:', error));
     });
-    </script>
+    </script> -->
+
+    <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+        const countrySelect = document.getElementById('country');
+        const placeholderOption = countrySelect.querySelector('option');
+
+        // Fetch country data
+        fetch('https://restcountries.com/v3.1/all')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Clear placeholder
+                countrySelect.innerHTML = '<option value="" selected>Select a country</option>';
+
+                // Populate the dropdown
+                const countries = data.map(country => country.name.common).sort();
+                countries.forEach(country => {
+                    const option = document.createElement('option');
+                    option.value = country;
+                    option.textContent = country;
+                    countrySelect.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching countries:', error);
+                // Show error message in the dropdown
+                placeholderOption.textContent = 'Error loading countries';
+            });
+    });
+</script>
 @endsection

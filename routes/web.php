@@ -10,8 +10,11 @@ use App\Http\Controllers\{
 };
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/',function(){
+    return redirect('login');
 });
 require __DIR__.'/auth.php';
 Route::get('/home', [HomeController::class, 'index'])->name('home');
